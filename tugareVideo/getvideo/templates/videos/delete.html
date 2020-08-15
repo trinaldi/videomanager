@@ -1,0 +1,21 @@
+{% extends 'videos/base.html' %}
+{% block content %}
+<div class="container d-flex justify-content-center align-self-center"
+     style="height:100vh">
+  <div class="row justify-content-center align-self-center shadow p-3 mb-5 bg-white rounded">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <h2>Deseja remover este item?</h2>
+        <h6>{{ video.video_title }}</h6>
+        <div class="content">
+          <div class="row justify-content-around mt-5">
+            <a href="/">Cancelar  </a>
+            <button type="submit" class="btn btn-danger">Remover</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

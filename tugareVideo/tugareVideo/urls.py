@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from getvideo import views
 
 urlpatterns = [
+    path('', views.IndexView.as_view(), name='index'),
     path('admin/', admin.site.urls),
     path('videos/', views.IndexView.as_view(), name='index'),
     path('videos/<int:pk>/', views.VideoDetailView.as_view(), name='detail'),
@@ -25,3 +28,6 @@ urlpatterns = [
     path('videos/create/', views.create, name='create'),
     path('videos/delete/<int:pk>/', views.delete, name='delete'),
 ]
+
+if settings.DEBUG: # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

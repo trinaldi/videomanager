@@ -1,6 +1,31 @@
-<h1>{{ video.video_title }}</h1>
-<ul>
-  <li>{{ video.video_country }}</li>
-  <li>{{ video.video_thumb }}</li>
-  <li>{{ video.video_url }}</li>
-</ul>
+{% extends 'videos/base.html' %}
+{% load static %}
+{% block content %}
+{% get_media_prefix as MEDIA_ROOT %}
+<div class="d-flex flex-column">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1>Details</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="card text-center">
+          <img class="card-img-top" src="{{ MEDIA_ROOT }}/{{ video.video_title }}.png" alt="{{ video.video_title }}">
+          <div class="card-body">
+            <h4 class="card-title">{{ video.video_title }}</h4>
+            <p class="card-text"><b>Country</b>: {{ video.video_country }}</p>
+            <p class="card-text"><b>Timestamp</b>: {{ video.video_thumb }}</p>
+            <p class="card-text"><b>Original URL</b>: {{ video.video_url }}</p>
+          </div>
+        </div>
+    <div class="row justify-content-center m-3">
+      <a href="/videos" class="btn btn-primary" role="button">Voltar</a>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
