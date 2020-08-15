@@ -78,3 +78,9 @@ def delete(request, pk, template_name='videos/delete.html'):
         return redirect('index')
     context["video"] = video
     return render(request, template_name, {'video':video})
+
+def make_html(request, pk, template_name='videos/template.html'):
+    context = {}
+    video = get_object_or_404(Video, pk=pk)
+    context["video"] = video
+    return render(request, template_name, {'video':video})

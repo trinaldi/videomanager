@@ -1,0 +1,276 @@
+{% load static %}
+{% get_media_prefix as MEDIA_ROOT %}
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <link href="https://vjs.zencdn.net/7.8.2/video-js.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <title>{{ video.video_title }} - P&G Health News</title>
+    <style type="text/css">
+.video-js .vjs-control-bar {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4em !important;
+  background-color: rgb(228,227,227);
+
+}
+
+
+.video-js .vjs-big-play-button {
+  display: none;
+}
+
+.vjs-text-track-display {
+  display: none;
+}
+
+/* .video-js{
+height: 30px;
+min-height: 0px
+
+} */
+
+.video-js .vjs-time-control {
+  flex: none;
+  font-size: 1em;
+  line-height: 3em;
+  min-width: 2em;
+  width: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: black;
+}
+
+.video-js .vjs-load-progress div {
+  background: none;
+  background-color: rgba(0, 0, 0,0);
+
+}
+
+.video-js .vjs-play-progress {
+  background-color: #4CAF50;
+
+}
+
+.video-js .vjs-slider {
+  background-color: white;
+  background-color: rgba(0, 0, 0,0);
+
+}
+
+    .video-js .vjs-picture-in-picture-control {
+
+      display: none;
+    }
+
+    .video-js .vjs-load-progress {
+      /* background: none; */
+      background-color: rgba(0, 0, 0,0);
+
+    }
+
+    /* .vjs-icon-fullscreen-enter, .video-js .vjs-fullscreen-control .vjs-icon-placeholder {
+
+    display: none;
+    } */
+
+    /* .video-js .vjs-fullscreen-control {
+
+    display: none;
+    } */
+
+    .video-js .vjs-play-progress:before {
+      font-size: 1.6em;
+      position: absolute;
+      right: -0.5em;
+      top: -0.2em;
+      z-index: 1;
+    }
+
+
+    .video-js .vjs-progress-control .vjs-progress-holder {
+      margin: 0 10px;
+      height: 11px;
+    }
+
+    .video-js .vjs-progress-control:hover .vjs-time-tooltip, .video-js .vjs-progress-control:hover .vjs-progress-holder:focus .vjs-time-tooltip {
+      display: none;
+      font-size: 1.6em !important;
+      visibility: hidden;
+    }
+
+    .video-js .vjs-play-progress:before {
+      font-size: 2.2em;
+      position: absolute;
+      right: -0.5em;
+      top: -6px;
+      z-index: 1;
+      color: #4CAF50;
+      /* border: 2px solid black;
+background: #4CAF50;
+border-radius: 17px;
+       */
+    }
+
+
+    .video-js .vjs-control-bar {
+      display: flex;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3em;
+      background-color: rgba(0, 0, 0,0);
+
+
+    }
+
+    .video-js .vjs-play-control {
+      cursor: pointer;
+      background: #4CAF50;
+      border-radius: 5em;
+      height: 40px;
+      width: 40px;
+      font-size: 1.3em;
+
+    }
+
+    .vjs-icon-play:before{
+      font-size:2.5em;
+    }
+
+    .video-js .vjs-mute-control {
+      cursor: pointer;
+      flex: none;
+      background-color: #4CAF50;
+      border-radius: 5em;
+      font-size: 7px;
+      height: 20px;
+      width: 20px;
+    }
+
+    .video-js .vjs-control {
+
+      padding: 5px;
+
+
+    }
+
+    .video-js .vjs-volume-level {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      height: 5px;
+      background-color: #4CAF50;
+    }
+
+    .video-js .vjs-volume-panel{
+      align-items: center;
+    }
+
+    .video-js .vjs-volume-panel .vjs-volume-control {
+      align-items: center;
+      color: #4CAF50;
+    }
+
+    .vjs-volume-bar.vjs-slider-horizontal .vjs-volume-level {
+      width: 100%;
+    }
+
+    .vjs-slider-horizontal .vjs-volume-level:before {
+      top: -5px;
+      right: -0.5em;
+    }
+    .video-js .vjs-volume-level:before {
+      position: absolute;
+      font-size: 1.5em;
+      /*  border: 2px solid black;
+background: #4CAF50;
+border-radius: 17px;*/
+    }
+
+    .video-js .vjs-volume-bar {
+      margin: 3px .45em;
+    }
+
+    .video-js .vjs-slider {
+      background-color: rgb(228,227,227);
+      border-radius: 10px ;
+    }
+
+    .vjs-poster, .video-js{
+      background-color: rgba(0, 0, 0,0);
+    }
+
+    .my-video-dimensions {
+      width: 640px;
+      height: 360px;
+    }
+
+    .vjs-volume-bar.vjs-slider-horizontal {
+      width: 5em;
+      height: 5px;
+    }
+
+    .video-js .vjs-progress-control:hover .vjs-progress-holder{
+      font-size: 1em;
+    }
+
+    .vjs-remaining-time {
+      color:white !important;
+    }
+
+    .vjs-fullscreen-control{
+      margin-top:4px !important;
+    }
+    .titulo{
+      margin: 0px 90px;
+    }
+
+    h1{
+      text-align: center !important;
+      font-size:16px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+    }
+
+    .video-content{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="video-content">
+      <h1>{{ video.video_title }}</h1>
+      <video
+        id="my-video"
+        class="video-js"
+        controls
+        preload="auto"
+        width="640"
+        height="264"
+        poster="{{ MEDIA_ROOT }}/{{ video.video_title }}.png"
+        data-setup="{}"
+        style="margin: auto"
+        >
+        <source src="{{ MEDIA_ROOT }}/{{ video.video_title }}.mp4" type="video/mp4" />
+        <p class="vjs-no-js">
+        Para ver el video, active el Javascript de su navegador.
+        </p>
+      </video>
+    </div>
+
+    <script src="https://vjs.zencdn.net/7.8.2/video.js"></script>
+  </body>
+</html>
