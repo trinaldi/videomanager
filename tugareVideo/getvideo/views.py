@@ -33,7 +33,7 @@ def set_thumb(video, timestamp, output):
     video = f'./media/{video}.mp4' #Again, it might change
     output = f'./media/{output}.png'
     thumb = FFmpeg(inputs={video: None},
-            outputs={output: ['-ss', timestamp, '-vframes', '1']})
+            outputs={output: ['-ss', timestamp, '-vframes', '1', '-y']})
     thumb.run()
 
 def download_link(url, title):
