@@ -6,11 +6,18 @@
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row flex-column align-items-center my-5">
+  <div class="row justify-content-around align-items-center m-5">
     <a href="{% url 'create' %}" class="d-flex btn btn-success">
       <span class="material-icons">add</span>
        Add new video
     </a>
+    <form class="row" action="{% url 'results' %}" method="GET">
+      <div class="form-group m-0">
+        <label for="searchVideos" class="sr-only">Search Videos</label>
+        <input name="q" type="text" class="form-control" id="seachVideos" placeholder="Search...">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
   </div>
 </div>
 <div class="container-fluid">

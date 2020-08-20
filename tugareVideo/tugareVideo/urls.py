@@ -28,6 +28,7 @@ urlpatterns = [
     path('videos/create/', views.create, name='create'),
     path('videos/delete/<int:pk>/', views.delete, name='delete'),
     path('videos/export/<int:pk>/', views.make_html, name='export'),
+    path('videos/results/', views.SearchResultsView.as_view(), name='results'),
 ]
 
 if settings.DEBUG: # new

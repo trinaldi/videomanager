@@ -3,9 +3,10 @@ from google_drive_downloader import GoogleDriveDownloader as gd
 from ffmpy import FFmpeg
 #Django
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.http import HttpResponse
 from django.template import Context, loader
+from django.db.models import Q
 
 # app
 from .models import Video
@@ -21,6 +22,17 @@ class IndexView(ListView):
 class VideoDetailView(DetailView):
     template_name = 'videos/detail.html'
     model = Video
+
+class SearchResultsView(ListView):
+    template_name = 'videos/results.html'
+    model = Video
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        object_list = Video.objects.filter(
+            Q(video_title__icontains=query) | Q(video_country__icontains=query)
+        )
+        return object_list
 
 def split_link(url):
     url_list = url.split('/')
