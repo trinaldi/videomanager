@@ -39,6 +39,8 @@ This projects combine simple CRUD actions, templates, thirdy-party modules, _et 
 
 `$ python manage.py runserver`
 
+---
+
 At this point, the `videomanager` app will be running at http://localhost:3000
 
 ## Further information
