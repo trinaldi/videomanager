@@ -21,23 +21,23 @@ This projects combine simple CRUD actions, templates, thirdy-party modules, _et 
 
 1. Clone this repository
 
-`$ git clone git@github.com:trinaldi/videomanager.git`
+	`$ git clone git@github.com:trinaldi/videomanager.git`
 
 2. (Optional, though recommended) Create a virtual enviroment with Python inside the base dir. I use [`venv`](https://github.com/python/cpython/tree/3.8/Lib/venv/)
 
-`$ python -m venv .env`
+	`$ python -m venv .env`
 
 3. Hopefully `freeze` correctly created the requirements, make sure to install them
 
-`$ pip install -r requirements.txt`
+	`$ pip install -r requirements.txt`
 
 4. `cd` into the project folder and run migrations
 
-`$ python manage.py migrate`
+	`$ python manage.py migrate`
 
 5. Run the local server
 
-`$ python manage.py runserver`
+	`$ python manage.py runserver`
 
 ---
 
