@@ -1,15 +1,12 @@
 # videomanager
 
-Django project to manage video files from Google Drive's "Shereable link"
-
-## Name
-
-Some names are purelly coincidental, thus, not having anything to do with **any** corporation.
+Django project to manage video files from Google Drive's "Shereable link".
 
 ## Motivation
 
-Create a Django project that is *actually* usefull.  
-This projects combine simple CRUD actions, templates, thirdy-party modules, _et al._
+Create a Django project that is *actually* useful.  
+This projects combine simple CRUD actions, templates, thirdy-party modules, _et al._  
+Templates were create using [Bootstrap4](https://getbootstrap.com) and [Material Icons](https://material.io/resources/icons/?style=baseline)
 
 ## Requirements
 
